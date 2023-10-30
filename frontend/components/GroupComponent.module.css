@@ -1,0 +1,23 @@
+.leftsideParent {
+  position: absolute;
+  height: 75.15%;
+  width: 88.19%;
+  top: 11.68%;
+  right: 4.86%;
+  bottom: 13.17%;
+  left: 6.94%;
+  text-align: left;
+  font-size: var(--font-size-lg);
+  color: var(--color-midnightblue);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 1200px) {
+  .leftsideParent {
+    display: flex;
+  }
+}
+@media screen and (max-width: 960px) {
+  .leftsideParent {
+    display: flex;
+  }
+}

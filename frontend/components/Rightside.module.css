@@ -1,0 +1,124 @@
+.rightsideChild {
+  position: absolute;
+  top: 149px;
+  left: 70px;
+  border-radius: var(--br-21xl);
+  background-color: var(--color-darkorange);
+  width: 447px;
+  height: 447px;
+}
+.happyBeardedYoungManLooksIcon {
+  position: absolute;
+  top: 0;
+  left: 70px;
+  border-radius: 0 0 var(--br-21xl) var(--br-21xl);
+  width: 447px;
+  height: 596px;
+  object-fit: cover;
+}
+.rightsideItem {
+  position: absolute;
+  top: 244px;
+  left: 88px;
+  border-radius: var(--br-11xl);
+  width: 150px;
+  height: 335px;
+}
+.rightsideInner {
+  position: absolute;
+  top: 244px;
+  left: 0;
+  border-radius: 30.56px;
+  background-color: var(--color-white);
+  width: 179px;
+  height: 216px;
+}
+.ellipseIcon {
+  position: absolute;
+  top: 273px;
+  left: 37.9px;
+  border-radius: 50%;
+  width: 103.1px;
+  height: 103.1px;
+  object-fit: cover;
+}
+.received {
+  position: absolute;
+  top: 61.11%;
+  left: 7.24%;
+  letter-spacing: -0.04em;
+  line-height: 49.5px;
+}
+.ellipseDiv,
+.rightsideChild1 {
+  position: absolute;
+  top: 443px;
+  left: 73px;
+  border-radius: 50%;
+  background-color: var(--color-midnightblue);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  border: 5px solid var(--color-white);
+  box-sizing: border-box;
+  width: 33px;
+  height: 33px;
+}
+.rightsideChild1 {
+  top: 559px;
+  left: 206px;
+}
+.frameChild,
+.frameIcon {
+  position: absolute;
+  top: 122px;
+  left: 423px;
+  border-radius: 41.29px;
+  width: 128px;
+  height: 128px;
+}
+.frameChild {
+  top: 32px;
+  left: 37px;
+  border-radius: 50%;
+  background-color: var(--color-limegreen);
+  width: 46px;
+  height: 46px;
+}
+.checkIcon {
+  position: absolute;
+  top: 41.2px;
+  left: 46.2px;
+  width: 27.6px;
+  height: 27.6px;
+  overflow: hidden;
+}
+.youJustSent {
+  position: absolute;
+  width: 61.06%;
+  top: 26.17%;
+  left: 28.85%;
+  line-height: 26px;
+  font-weight: 500;
+  display: inline-block;
+}
+.ellipseParent {
+  position: absolute;
+  top: 523px;
+  left: 223px;
+  border-radius: var(--br-21xl);
+  background-color: var(--color-white);
+  width: 357px;
+  height: 107px;
+  font-size: var(--font-size-lg);
+  font-family: var(--font-inter);
+}
+.rightside {
+  position: absolute;
+  top: 0;
+  left: 690px;
+  width: 580px;
+  height: 630px;
+  text-align: left;
+  font-size: 21.39px;
+  color: var(--color-midnightblue);
+  font-family: var(--font-faktum-test);
+}

@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Faktum+Test:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-inter: Inter;
+  --font-faktum-test: "Faktum Test";
+
+  /* font sizes */
+  --font-size-lg: 18px;
+  --font-size-2xl-4: 21.4px;
+  --font-size-xl: 20px;
+  --font-size-13xl: 32px;
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-51xl-1: 70.1px;
+  --font-size-41xl: 60px;
+  --font-size-23xl: 42px;
+  --font-size-11xl: 30px;
+  --font-size-16xl-2: 35.2px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-midnightblue: #06113c;
+  --color-limegreen: #2eb70c;
+  --color-darkorange: #ff8c32;
+  --color-slategray: #4c5371;
+
+  /* Gaps */
+  --gap-xs: 12px;
+
+  /* Border radiuses */
+  --br-21xl: 40px;
+  --br-22xl-3: 41.3px;
+  --br-11xl-6: 30.6px;
+  --br-11xl: 30px;
+  --br-31xl: 50px;
+}

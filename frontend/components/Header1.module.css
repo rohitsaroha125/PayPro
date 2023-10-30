@@ -1,0 +1,108 @@
+.faspay,
+.icon {
+  position: relative;
+}
+.icon {
+  width: 38.2px;
+  height: 44.5px;
+}
+.faspay {
+  letter-spacing: -0.04em;
+}
+.iconParent {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.howItWorks,
+.pricing {
+  position: relative;
+}
+.menu {
+  position: absolute;
+  top: 17px;
+  left: 399px;
+  width: 412px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: var(--font-size-lg);
+  font-family: var(--font-inter);
+}
+.buttonChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-darkorange);
+  width: 187px;
+  height: 58px;
+}
+.signUp {
+  position: absolute;
+  top: 31.03%;
+  left: 32.09%;
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  font-family: var(--font-inter);
+  color: var(--color-midnightblue);
+  text-align: left;
+}
+.button,
+.header {
+  position: absolute;
+  height: 58px;
+}
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 0;
+  left: 1115px;
+  width: 187px;
+}
+.header {
+  top: 40px;
+  left: 68px;
+  width: 1302px;
+  text-align: left;
+  font-size: var(--font-size-16xl-2);
+  color: var(--color-midnightblue);
+  font-family: var(--font-faktum-test);
+}
+@media screen and (max-width: 1200px) {
+  .howItWorks,
+  .pricing {
+    font-size: var(--font-size-lg);
+  }
+  .button,
+  .menu {
+    display: flex;
+  }
+}
+@media screen and (max-width: 960px) {
+  .howItWorks,
+  .pricing {
+    font-size: var(--font-size-base);
+  }
+  .button,
+  .menu {
+    display: flex;
+  }
+}
+@media screen and (max-width: 420px) {
+  .pricing {
+    font-size: var(--font-size-base);
+  }
+  .button,
+  .menu {
+    display: none;
+  }
+}

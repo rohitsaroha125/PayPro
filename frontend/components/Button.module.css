@@ -1,0 +1,30 @@
+.buttonChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-darkorange);
+  width: 235px;
+  height: 66px;
+}
+.getStarted {
+  position: absolute;
+  top: 31.82%;
+  left: 26.81%;
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  font-family: var(--font-inter);
+  color: var(--color-midnightblue);
+  text-align: center;
+}
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 328px;
+  left: 0;
+  width: 235px;
+  height: 66px;
+}
