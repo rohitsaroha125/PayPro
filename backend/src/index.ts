@@ -2,7 +2,7 @@ import 'dotenv/config'
 import { AppDataSource } from "./data-source"
 import { User } from "./entity/User"
 import * as express from "express"
-import { Request, Response } from "express"
+import { Request, Response, NextFunction } from "express"
 
 require('dotenv').config()
 
@@ -31,6 +31,13 @@ AppDataSource.initialize().then(async () => {
 app.get("/users", function (req: Request, res: Response) {
     // here we will have logic to return all users
     res.send('Hello world')
+})
+
+app.all('*', (req: Request,res: Response,next: NextFunction) => {
+    res.status(404).json({
+        status: 'fail',
+        message: `Can't find ${req.originalUrl} on this server`
+    })
 })
 
 app.listen(port,() => {
