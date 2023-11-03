@@ -19,6 +19,7 @@
    },
    "scripts": {
       "start": "nodemon src/index.ts",
+      "start:prod": "NODE_ENV=production nodemon src/index.ts",
       "typeorm": "typeorm-ts-node-commonjs",
       "migration:run": "npx ts-node ./node_modules/.bin/typeorm migration:run -d ./src/data-source.ts",
       "migration:generate": "npx ts-node ./node_modules/.bin/typeorm migration:generate ./src/migrations/**/* -d ./src/data-source.ts"
