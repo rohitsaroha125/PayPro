@@ -4,6 +4,7 @@ import { User } from "./entity/User"
 import * as express from "express"
 import { Request, Response, NextFunction } from "express"
 import AppError from './utils/errorHandler'
+import errorController from './controllers/errorController'
 
 require('dotenv').config()
 
@@ -35,25 +36,11 @@ app.get("/users", function (req: Request, res: Response) {
 })
 
 app.all('*', (req: Request,res: Response,next: NextFunction) => {
-    res.status(404).json({
-        status: 'fail',
-        message: `Can't find ${req.originalUrl} on this server`
-    })
-
     const err = new AppError(`Can't find ${req.originalUrl} on this server`, 'fail', 404)
-
     next(err)
 })
 
-app.use((err:any, req: Request, res: Response, next:NextFunction) => {
-    err.statusCode = err.statusCode || 500
-    err.status = err.status || 'error'
-
-    res.status(err.statusCode).json({
-        status: err.status,
-        message: err.message
-    })
-})
+app.use(errorController)
 
 app.listen(port,() => {
     console.log(`Server started on ${port}`)
