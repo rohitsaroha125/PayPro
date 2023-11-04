@@ -1,12 +1,12 @@
 import 'dotenv/config'
+require('dotenv').config()
+
 import { AppDataSource } from "./data-source"
 import { User } from "./entity/User"
 import * as express from "express"
 import { Request, Response, NextFunction } from "express"
 import AppError from './utils/errorHandler'
 import errorController from './controllers/errorController'
-
-require('dotenv').config()
 
 const app = express()
 const port = 5000 || process.env.PORT
