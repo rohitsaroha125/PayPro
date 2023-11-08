@@ -1,8 +1,7 @@
 import 'dotenv/config'
 require('dotenv').config()
 
-import { AppDataSource } from "./data-source"
-import { User } from "./entity/User"
+import { AppDataSource } from './data-source'
 import * as express from "express"
 import { Request, Response, NextFunction } from "express"
 import AppError from './utils/errorHandler'

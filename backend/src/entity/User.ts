@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn,UpdateDateColumn } from "typeorm"
 import { IsNotEmpty, IsString, Validate } from 'class-validator';
 import { Exclude } from 'class-transformer';
 
@@ -22,10 +22,9 @@ export class User {
     @Column({nullable: true})
     photo: string
 
-    @Column()
-    @Exclude()
-    @Validate((object: User, value: string) => object.password === value, {
-        message: 'Passwords do not match',
-      })
-    passwordConfirmation: string;
+    @CreateDateColumn()
+    created_at: Date;
+
+    @UpdateDateColumn()
+    updated_at: Date;
 }

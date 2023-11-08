@@ -26,7 +26,6 @@ const UserController: UserMethods = {
             user.lastName = lastName
             user.email = email
             user.password = password
-            user.passwordConfirmation = passwordConfirmation
             user.photo = photo
 
             await userRepository.save(user)
@@ -34,7 +33,7 @@ const UserController: UserMethods = {
             response.status(201).json({ status:'ok',message: 'User registered successfully' });
 
         }catch(err){
-            next(err)
+            next(new AppError(err.message, 'fail', 500))
         }
     }
 }
