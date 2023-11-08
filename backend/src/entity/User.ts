@@ -1,6 +1,4 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn,UpdateDateColumn } from "typeorm"
-import { IsNotEmpty, IsString, Validate } from 'class-validator';
-import { Exclude } from 'class-transformer';
 
 @Entity()
 export class User {
@@ -20,7 +18,7 @@ export class User {
     password: string
 
     @Column({nullable: true})
-    photo: string
+    photo: string;
 
     @CreateDateColumn()
     created_at: Date;
