@@ -31,4 +31,8 @@ export class User {
     async hashPasswordBeforeInsert() {
         this.password = await bcrypt.hash(this.password, 10);
     }
+
+    async checkIfUnencryptedPasswordIsValid(userPassword: string) {
+        return await bcrypt.compare(userPassword, this.password)
+    }
 }
