@@ -61,11 +61,13 @@ const UserController: UserMethods = {
                     email: user.email,
                 }, 'loginAuth', { expiresIn: 60 * 60 })
 
+                const { password: _, ...userResponse } = user;
+
                 response.status(401).json({
                     status:'ok',
                     message: 'Login Successful!',
                     data:{
-                        user,
+                        user: userResponse,
                         token
                     }
                 })
@@ -74,7 +76,6 @@ const UserController: UserMethods = {
             }
 
         } catch(err) {
-            console.log('error is ', err)
             next(new AppError(err.message, 'fail', 500))
         }
     }
