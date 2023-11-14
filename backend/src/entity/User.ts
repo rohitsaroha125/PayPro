@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn,UpdateDateColumn, BeforeInsert } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn,UpdateDateColumn, BeforeInsert, Double } from "typeorm"
 import * as bcrypt from 'bcryptjs';
 
 @Entity()
@@ -20,6 +20,9 @@ export class User {
 
     @Column({nullable: true})
     photo: string;
+
+    @Column({ type: 'float', default: 0 })
+    balance: number;
 
     @CreateDateColumn()
     created_at: Date;
