@@ -7,6 +7,7 @@ import { Request, Response, NextFunction } from "express"
 import AppError from './utils/errorHandler'
 import errorController from './controllers/errorController'
 import userRoutes from './routes/userRoutes'
+import transactionRoutes from './routes/transactionRoutes'
 
 const app = express()
 const port = 5000 || process.env.PORT
@@ -17,6 +18,7 @@ AppDataSource.initialize().then(async () => {
 })
 
 app.use('/users', userRoutes)
+app.use('/transaction', transactionRoutes)
 
 app.all('*', (req: Request,res: Response,next: NextFunction) => {
     const err = new AppError(`Can't find ${req.originalUrl} on this server`, 'fail', 404)
