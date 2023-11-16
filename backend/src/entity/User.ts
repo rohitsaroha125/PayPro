@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn,UpdateDateColumn, BeforeInsert, Double } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn,UpdateDateColumn, BeforeInsert, Double, OneToMany } from "typeorm"
 import * as bcrypt from 'bcryptjs';
+import { Transaction } from "./Transaction";
 
 @Entity()
 export class User {
@@ -29,6 +30,12 @@ export class User {
 
     @UpdateDateColumn()
     updated_at: Date;
+
+    @OneToMany(() => Transaction, (transaction) => transaction.senderId)
+    totalSent: Transaction[];
+
+    @OneToMany(() => Transaction, (transaction) => transaction.receiverId)
+    totalReceieved: Transaction[]
 
     @BeforeInsert()
     async hashPasswordBeforeInsert() {

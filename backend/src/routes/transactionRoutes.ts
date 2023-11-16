@@ -8,4 +8,6 @@ router.get('/',privateRoutes, (req: Request,res: Response,next: NextFunction) =>
     res.send('Hello world')
 })
 
+
+
 export default router
