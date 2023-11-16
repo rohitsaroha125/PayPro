@@ -26,9 +26,23 @@ const TransactionController: TransactionMethods = {
     },
     viewTransactionById: async (req:Request, res:Response, next:NextFunction) => {
         try{
+            const {id} = req.params
 
+            const transaction = await transactionRepository.findOne({ where: { id: Number(id) } });
+
+            if (!transaction) {
+                next(new AppError('Transaction Not Found!', 'fail', 404))
+            } 
+
+            res.status(200).json({
+                status:'ok',
+                message:'Transaction Found!',
+                data:{
+                    transaction
+                }
+            })
         }catch(err) {
-
+            next(new AppError(err.message, 'error', 500))
         }
     },
     recordTransaction: async(req:Request, res:Response, next:NextFunction) => {
@@ -53,8 +67,6 @@ const TransactionController: TransactionMethods = {
 
             await transactionRepository.save(transaction)
 
-            console.log('api call', sender)
-
             sender.balance -= amount
             receiver.balance += amount
 
@@ -62,14 +74,13 @@ const TransactionController: TransactionMethods = {
 
             res.status(201).json({
                 status: 'ok',
-                message: 'Transaction Recorded',
+                message: 'Transaction Recorded!',
                 data: {
                     transaction
                 }
             })
 
         }catch(err) {
-            console.log('error is ', err)
             next(new AppError(err.message, 'error', 500))
         }
     },
