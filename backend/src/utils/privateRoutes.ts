@@ -2,15 +2,9 @@
 import { Request, Response, NextFunction } from "express"
 import * as jwt from 'jsonwebtoken'
 import AppError from "./errorHandler"
+import { PrivateRequest } from "../typeHelpers/requestType"
 
-interface RequestNew extends Request{
-    user: {
-        id: number,
-        email: string
-    }
-}
-
-const privateRoutes = async(req: RequestNew, res: Response, next: NextFunction) => {
+const privateRoutes = async(req: PrivateRequest, res: Response, next: NextFunction) => {
     try{
         const token = req.headers['authorization']
         if (!token) {

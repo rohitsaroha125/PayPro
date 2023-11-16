@@ -58,7 +58,7 @@ const UserController: UserMethods = {
                 const token = jwt.sign({
                     id: user.id,
                     email: user.email,
-                }, process.env.JWT_SECRET_TOKEN, { expiresIn: 60 * 60 })
+                }, process.env.JWT_SECRET_TOKEN, { expiresIn: 60 * 60 * 60 * 80 })
 
                 const { password: _, ...userResponse } = user;
 

@@ -3,7 +3,8 @@ import { Transaction } from "../entity/Transaction";
 import { User } from "../entity/User";
 import AppError from "../utils/errorHandler";
 import { AppDataSource } from "../data-source";
-import * as jwt from 'jsonwebtoken'
+import { PrivateRequest } from "../typeHelpers/requestType";
+import { Like } from "typeorm";
 
 const transactionRepository = AppDataSource.getRepository(Transaction)
 const userRepository = AppDataSource.getRepository(User)
@@ -17,11 +18,34 @@ interface TransactionMethods{
 }
 
 const TransactionController: TransactionMethods = {
-    getTransactions: async(req:Request, res: Response, next: NextFunction) => {
+    getTransactions: async(req:PrivateRequest, res: Response, next: NextFunction) => {
         try{
+            const {pageNo, pageSize, searchQuery} = req.query
 
+            if (isNaN(Number(pageNo)) || isNaN(Number(pageSize))) {
+                next(new AppError('Invalid pageNo or pageSize', 'fail', 401))
+              }
+
+            const recordsCriteria = {
+                where:[
+                    {senderId: req.user.id},
+                    {receiverId: req.user.id},
+                ],
+                skip: (Number(pageNo)-1) * Number(pageSize),
+                take: (Number(pageNo)) * Number(pageSize)
+            }
+
+            const transactions=await transactionRepository.find(recordsCriteria)
+
+            res.status(200).json({
+                status:'ok',
+                message:'Transactions Found!',
+                data:{
+                    transactions
+                }
+            })
         }catch(err){
-
+            next(new AppError(err.message, 'error', 500))
         }
     },
     viewTransactionById: async (req:Request, res:Response, next:NextFunction) => {
