@@ -16,7 +16,7 @@ export class Transaction {
     @Index()
     receiverId: number
 
-    @Column()
+    @Column({type:"float", default: 0})
     amount: number
 
     @CreateDateColumn()

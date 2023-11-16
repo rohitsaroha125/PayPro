@@ -19,7 +19,6 @@ const UserController: UserMethods = {
                 lastName,
                 email,
                 password,
-                passwordConfirmation,
                 photo
             } = request.body
 
