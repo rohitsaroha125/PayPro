@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import styles from "./Header1.module.css";
 import { useContext } from "react";
 import { ModalContext } from "../context/modalContext";
+import Login from "./Login";
 import Modal from "./Modal";
 
 const Header1: NextPage = () => {
@@ -31,9 +32,8 @@ const Header1: NextPage = () => {
         <div className={styles.signUp}>Sign Up</div>
       </button>
     </div>
-    <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-        <h2>This is your modal content</h2>
-        <p>More modal content here...</p>
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        <Login />
       </Modal>
     </>
   );

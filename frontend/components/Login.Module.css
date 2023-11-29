@@ -1,0 +1,13 @@
+/* LoginForm.module.css */
+.loginForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.loginInput{
+    display: flex;
+    flex-direction: column;
+}
+
+  /* Add more styles as needed for the login form */
+  
