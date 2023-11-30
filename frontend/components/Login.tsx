@@ -12,31 +12,38 @@ const Login: React.FC<{}> = () => {
 
   return (
     <div className={styles.loginForm}>
-      <h2>Login</h2>
+      <h2 className="text-center" style={{
+        marginTop:'0px'
+      }}>Login</h2>
       <form onSubmit={handleLogin}>
         <div className={styles.loginInput}>
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email" className={styles.loginLabel}>Email</label>
           <input
             type="email"
             id="email"
+            placeholder="Enter Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className={styles.textInput}
           />
         </div>
 
         <div className={styles.loginInput}>
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password" className={styles.loginLabel}>Password</label>
           <input
             type="password"
             id="password"
+            placeholder="Enter Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            className={styles.textInput}
           />
         </div>
-
-        <button type="submit">Login</button>
+        <div className={styles.midBtn}>
+            <button type="submit" className={styles.loginBtn}>Login</button>
+        </div>
       </form>
     </div>
   );

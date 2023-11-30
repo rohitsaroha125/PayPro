@@ -1,13 +1,42 @@
-/* LoginForm.module.css */
 .loginForm {
     display: flex;
     flex-direction: column;
+    font-family: 'Inter';
+    width: 100%;
   }
   
 .loginInput{
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
-  /* Add more styles as needed for the login form */
+.loginLabel{
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
   
+.textInput{
+    font-size: 15px;
+    padding: 12.5px 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+}
+
+.loginBtn{
+    padding: 15px 40px;
+    background: #ff8c32;
+    border-color: #ff8c32;
+    border: unset;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #06113c;
+    border-radius: 30px;
+}
+
+.midBtn{
+display: flex;
+justify-content: center;
+}
