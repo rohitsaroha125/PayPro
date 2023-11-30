@@ -4,7 +4,9 @@ import styles from "./Header1.module.css";
 import { useContext } from "react";
 import { ModalContext } from "../context/modalContext";
 import Login from "./Login";
+import Signup from "./Signup";
 import Modal from "./Modal";
+import AuthModal from "./AuthModal";
 
 const Header1: NextPage = () => {
 
@@ -32,9 +34,7 @@ const Header1: NextPage = () => {
         <div className={styles.signUp}>Sign Up</div>
       </button>
     </div>
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-        <Login />
-      </Modal>
+      <AuthModal />
     </>
   );
 };
