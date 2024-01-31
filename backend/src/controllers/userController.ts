@@ -72,7 +72,7 @@ const UserController: UserMethods = {
 
                 const { password: _, ...userResponse } = user;
 
-                response.status(401).json({
+                response.status(201).json({
                     status:'ok',
                     message: 'Login Successful!',
                     data:{
