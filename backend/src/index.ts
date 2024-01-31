@@ -2,6 +2,7 @@ import 'dotenv/config'
 require('dotenv').config()
 
 import { AppDataSource } from './data-source'
+import * as cors from 'cors'
 import * as express from "express"
 import { Request, Response, NextFunction } from "express"
 import AppError from './utils/errorHandler'
@@ -11,6 +12,9 @@ import transactionRoutes from './routes/transactionRoutes'
 
 const app = express()
 const port = 5000 || process.env.PORT
+
+app.use(cors())
+
 app.use(express.json())
 
 AppDataSource.initialize().then(async () => {

@@ -31,7 +31,17 @@ const UserController: UserMethods = {
 
             await userRepository.save(user)
 
-            response.status(201).json({ status:'ok',message: 'User registered successfully' });
+            const token = jwt.sign({
+                id: user.id,
+                email: user.email,
+            }, process.env.JWT_SECRET_TOKEN, { expiresIn: 60 * 60 * 60 * 80 })
+
+            const { password: _, ...userResponse } = user;
+
+            response.status(201).json({ status:'ok',message: 'User registered successfully', data:{
+                user: userResponse,
+                token
+            }});
 
         }catch(err){
             next(new AppError(err.message, 'fail', 500))
@@ -73,7 +83,6 @@ const UserController: UserMethods = {
             } else {
                 next(new AppError('Please enter valid email and password now', 'error', 401))
             }
-
         } catch(err) {
             next(new AppError(err.message, 'fail', 500))
         }

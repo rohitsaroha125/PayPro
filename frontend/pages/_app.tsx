@@ -2,6 +2,9 @@ import { Fragment } from "react";
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import "./global.css";
+import "toastr/build/toastr.min.css";
+import { Provider } from "react-redux";
+import store from "../store";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -13,7 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </Fragment>
   );
 }

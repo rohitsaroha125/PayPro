@@ -21,7 +21,7 @@ const Header1: NextPage = () => {
     <div className={styles.header}>
       <div className={styles.iconParent}>
         <img className={styles.icon} alt="" src="/icon.svg" />
-        <b className={styles.faspay}>Faspay</b>
+        <b className={styles.faspay}>PayPro</b>
       </div>
       <div className={styles.menu}>
         <div className={styles.howItWorks}>How it works</div>
